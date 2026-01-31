@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import logoImage from "figma:asset/c3408d4161476395e88288123c87a1241a5f5659.png";
 import wavesBackground from "figma:asset/9d56a886baf09f279c52089b93b3f337ec4082fb.png";
+import wavesBackgroundMobile from "figma:asset/d793548253afe128db41fad53b8090adb576c8c2.png";
 import AnimatedCounter from "@/app/components/AnimatedCounter";
 import { SuccessCases } from "@/app/components/SuccessCases";
 import "@/styles/animations.css";
@@ -116,8 +117,8 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative">
-        {/* Background de ondas 100% largura */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+        {/* Background de ondas 100% largura - Desktop */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden hidden md:block">
           <img 
             src={wavesBackground} 
             alt="" 
@@ -146,6 +147,15 @@ export default function App() {
 
           {/* Form Card */}
           <div className="max-w-2xl mx-auto mb-32 px-4 relative z-10">
+            {/* Background de ondas mobile - ATRÁS do card todo */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-screen pointer-events-none md:hidden" style={{ top: '-60%', zIndex: -1 }}>
+              <img 
+                src={wavesBackgroundMobile} 
+                alt="" 
+                className="w-full opacity-100"
+              />
+            </div>
+            
             {/* Card do formulário */}
             <div className="form-card bg-white rounded-3xl p-6 md:p-8 shadow-xl relative">
               <div className="mb-5">
